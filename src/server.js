@@ -6,12 +6,12 @@ require("dotenv").config();
 const app = express()
 
 const mongoose = require('mongoose');
-const Note = require('./models/Note') 
+const Note = require('./models/Note')
 
 const bodyParser = require('body-parser');
 
 // convert json of reqbody
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // databse conectivity
@@ -20,7 +20,7 @@ mongoose.connect(process.env.MONGODB).then(function () {
     // home route
     app.get("/", function (req, res) {
         // res.send("This is the Home Page");
-        const response = {message: "API works"};
+        const response = { message: "New changes done in nodejs server by kapil and then push on to github."};
         res.json(response);
     });
 
