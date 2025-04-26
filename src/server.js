@@ -20,7 +20,10 @@ mongoose.connect(process.env.MONGODB).then(function () {
     // home route
     app.get("/", function (req, res) {
         // res.send("This is the Home Page");
-        const response = { message: "New changes done in nodejs server by kapil and then push on to github."};
+        const response = {
+            message: "New changes done in nodejs server by kapil and then push on to github.",
+            newmessage: "clone from github and then push new change",
+        };
         res.json(response);
     });
 
