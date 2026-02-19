@@ -3,6 +3,8 @@
 const express = require('express');
 require("dotenv").config();
 
+const cors = require('cors');
+
 const app = express()
 
 const mongoose = require('mongoose');
@@ -13,6 +15,8 @@ const bodyParser = require('body-parser');
 // convert json of reqbody
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+app.use(cors());
 
 // databse conectivity
 mongoose.connect(process.env.MONGODB).then(function () {
